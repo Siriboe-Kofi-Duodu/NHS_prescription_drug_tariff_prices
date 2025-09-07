@@ -1,0 +1,9 @@
+#.gitignore
+#Ignore the database file
+PCA_drug_tariffs.sqlite
+
+
+#Ignore R history and temporary files
+.Rhistory
+*.RData
+*.Rds
