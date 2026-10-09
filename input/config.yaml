@@ -1,0 +1,30 @@
+#1. Year_Months
+#Note that specials are published only quarterly, that is why I provided a seperate year_month for it
+
+yyyymm: 202504
+specials_yyyymm: 202502 
+
+#2. Part_VIIIA datasource 
+#Update Link and Year_Month 
+Link_part_VIIIA: "https://www.nhsbsa.nhs.uk/sites/default/files/2025-04/Part%20VIIIA%20May%2025.xls.xlsx"
+
+
+#3. CP Prices data source
+cp_prices_link: "https://cpe.org.uk/our-news/April-2025-price-concessions-final-update/"
+
+
+#4.Specials tariff Part VIIIB data source 
+part_VIIIB_link: "https://www.nhsbsa.nhs.uk/sites/default/files/2025-01/Part%20VIIIB%20Feb%2025.xls.xlsx"
+
+
+
+#5. Specials tariff Part VIIID data source
+#Part VIIID Data sets 
+part_VIIID_link: "https://www.nhsbsa.nhs.uk/sites/default/files/2025-01/Part%20VIIID%20Feb%2025.xls.xlsx"
+
+
+#6. Drug Tariff Part IX (Appliances)
+Part_IX_link: "https://www.nhsbsa.nhs.uk/sites/default/files/2025-03/Drug%20Tariff%20Part%20IX%20April%202025.xlsx"
+
+#7. Snomed Codes Dataset
+Snomed_codes_link: "https://www.nhsbsa.nhs.uk/sites/default/files/2025-07/BNF%20Snomed%20Mapping%20data%2020250718.zip"

@@ -1,7 +1,9 @@
 #.gitignore
 #Ignore the database file
-PCA_drug_tariffs.sqlite
-
+database.sqlite
+renv.lock
+renv_setup
+*.log
 
 #Ignore R history and temporary files
 .Rhistory

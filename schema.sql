@@ -3,51 +3,51 @@
 
 PRAGMA foreign_keys = OFF;
 
-CREATE TABLE BNF_Chapter (
+CREATE TABLE IF NOT EXISTS BNF_Chapter (
     BNF_Chapter_Code TEXT PRIMARY KEY,
     BNF_Chapter_Name TEXT NOT NULL
 );
 
-CREATE TABLE BNF_Section (
+CREATE TABLE IF NOT EXISTS BNF_Section (
     BNF_Section_Code TEXT PRIMARY KEY,
     BNF_Section_Name TEXT NOT NULL,
     BNF_Chapter_Code TEXT,
     FOREIGN KEY (BNF_Chapter_Code) REFERENCES BNF_Chapter(BNF_Chapter_Code)
 );
 
-CREATE TABLE BNF_Paragraph (
+CREATE TABLE IF NOT EXISTS BNF_Paragraph (
     BNF_Paragraph_Code TEXT PRIMARY KEY,
     BNF_Paragraph_Name TEXT NOT NULL,
     BNF_Section_Code TEXT,
     FOREIGN KEY (BNF_Section_Code) REFERENCES BNF_Section(BNF_Section_Code)
 );
 
-CREATE TABLE Chemical_Substance (
+CREATE TABLE IF NOT EXISTS Chemical_Substance (
     BNF_Chemical_Substance_Code TEXT PRIMARY KEY,
     BNF_Chemical_Substance TEXT NOT NULL,
     BNF_Paragraph_Code TEXT,
     FOREIGN KEY (BNF_Paragraph_Code) REFERENCES BNF_Paragraph(BNF_Paragraph_Code)
 );
 
-CREATE TABLE Region (
+CREATE TABLE IF NOT EXISTS Region (
     Region_Code TEXT PRIMARY KEY,
     Region_Name TEXT NOT NULL
 );
 
-CREATE TABLE ICB (
+CREATE TABLE IF NOT EXISTS ICB (
     ICB_Code TEXT PRIMARY KEY,
     ICB_Name TEXT NOT NULL,
     Region_Code TEXT,
     FOREIGN KEY (Region_Code) REFERENCES Region(Region_Code)
 );
 
-CREATE TABLE VTM (
+CREATE TABLE IF NOT EXISTS VTM (
     VTMID TEXT PRIMARY KEY,
     VTM_Name TEXT,
     VMP_Code TEXT
 );
 
-CREATE TABLE VMP (
+CREATE TABLE IF NOT EXISTS VMP (
     VMP_Code TEXT PRIMARY KEY,
     BNF_Code TEXT,
     BNF_Name TEXT,
@@ -55,7 +55,7 @@ CREATE TABLE VMP (
     FOREIGN KEY (VTMID) REFERENCES VTM(VTMID)
 );
 
-CREATE TABLE VMPP (
+CREATE TABLE IF NOT EXISTS VMPP (
     VMPP_Code TEXT PRIMARY KEY,
     VMP_Code TEXT,
     DM_D_Product_and_Pack_Description TEXT,
@@ -65,7 +65,7 @@ CREATE TABLE VMPP (
     FOREIGN KEY (VMP_Code) REFERENCES VMP(VMP_Code)
 );
 
-CREATE TABLE AMP (
+CREATE TABLE IF NOT EXISTS AMP (
     AMP_Code TEXT PRIMARY KEY,
     BNF_Code TEXT,
     BNF_Name TEXT,
@@ -73,7 +73,7 @@ CREATE TABLE AMP (
     FOREIGN KEY (VTMID) REFERENCES VTM(VTMID)
 );
 
-CREATE TABLE AMPP (
+CREATE TABLE IF NOT EXISTS AMPP (
     AMPP_Code TEXT PRIMARY KEY,
     AMP_Code TEXT,
     DM_D_Product_and_Pack_Description TEXT,
@@ -84,7 +84,7 @@ CREATE TABLE AMPP (
     FOREIGN KEY (AMP_Code) REFERENCES AMP(AMP_Code)
 );
 
-CREATE TABLE BNF_Presentation (
+CREATE TABLE IF NOT EXISTS BNF_Presentation (
     BNF_ID INTEGER PRIMARY KEY AUTOINCREMENT,
     BNF_Presentation_Code TEXT NOT NULL,
     Year_Month TEXT NOT NULL,
@@ -108,7 +108,7 @@ CREATE TABLE BNF_Presentation (
     FOREIGN KEY (BNF_Chemical_Substance_Code) REFERENCES Chemical_Substance(BNF_Chemical_Substance_Code)
 );
 
-CREATE TABLE Part_VIIIA_Tariff (
+CREATE TABLE IF NOT EXISTS Part_VIIIA_Tariff (
     Year_Month TEXT,
     Medicine TEXT,
     Pack_Size TEXT,
@@ -121,7 +121,7 @@ CREATE TABLE Part_VIIIA_Tariff (
     PRIMARY KEY (Year_Month, VMPP_Snomed_Code)
 );
 
-CREATE TABLE specials_tariff (
+CREATE TABLE IF NOT EXISTS specials_tariff (
     VMP_Snomed_Code TEXT,
     VMPP_Snomed_Code TEXT,
     Medicine TEXT,
@@ -133,10 +133,10 @@ CREATE TABLE specials_tariff (
     Quarter TEXT,
     Drug_Category TEXT,
     BNF_Code TEXT,
-    PRIMARY KEY (Quarter, VMPP_Snomed_Code,Formulations)
+    PRIMARY KEY (Medicine,Pack_Size,Quarter)
 );
 
-CREATE TABLE Part_IX (
+CREATE TABLE IF NOT EXISTS Part_IX (
     Supplier_Name TEXT,
     VMP_Name TEXT,
     AMP_Name TEXT,
