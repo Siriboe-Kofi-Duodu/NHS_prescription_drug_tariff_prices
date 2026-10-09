@@ -1,13 +1,13 @@
 ## Overview
-This project provides extracts, and links data using the NHS API. Where API options are not available, direct links data to the data are used.It creates a database, and analytical pipeline to feed data to the database.
-The project links data various data sources using the NHS snomed codes to enhance research and further analysis for interested users. It can also be a useful resource for those learning about automated reproducible analytical pipeline (RAP), and or SQL. All data used are publicly available on the NHS website, no downloads required. 
+This project extracts and links data using the NHS API where available. Where API access is not available, direct links to the relevant data sources are used. The project establishes a database and an analytical pipeline to populate and maintain it.
+The project links data from various sources using NHS SNOMED codes, supporting further research and analysis. It may also serve as a useful resource for those interested in learning about automated reproducible analytical pipelines (RAP) and SQL.
+All data used are publicly available on the NHS website, so no manual data downloads are required.
 
 ## The project extracts and links these data:
 [Prescription Data (PCA)](https://www.nhsbsa.nhs.uk/prescription-data/dispensing-data/prescription-cost-analysis-pca-data)
 [Drug Tariff](https://www.nhsbsa.nhs.uk/pharmacies-gp-practices-and-appliance-contractors/drug-tariff/drug-tariff-part-viii)
 [Concessionary Prices](https://cpe.org.uk/funding-and-reimbursement/reimbursement/price-concessions/archive/)
 [Snomed Codes](https://dmd-browser.nhsbsa.nhs.uk/)
-
 
 ## Important Note
 Because of the size, I have put the database in .gitignore. You will find it in the parent folder when you clone the repository.
@@ -29,13 +29,11 @@ Clone the project to your local machine using the url.
 All data sources was directly from the NHS website. The `input/config.yaml` file hosts all data sources links, you would need to make the changes only in the `input/config.yaml` file. 
 Below are the guide on how to update the variable names and the link. 
 
-
 ### 1. Year_Month
 - `yyyymm<-202504`; change the `202504` to the month you want to update.
 Updating `yyyymm<-202504` will change the year month used to call the PCA data via the NHS API in the `scripts/PCA_data.R`.
 
 - `specials_yyyymm<-202502`; This is the Year_Month for only special products (Part VIIIB and Part VIIID).Special medicines are published only quarterly on the NHS website, that is why I provided a separate Year_Month for the two.
-
 
 ### 2.Part_VIIIA data source 
 To update the database with a new Part_VIIIA data, only change the  link in the `config.yaml`. You will get an excel link to the various months on the [NHS website](https://www.nhsbsa.nhs.uk/pharmacies-gp-practices-and-appliance-contractors/drug-tariff/drug-tariff-part-viii)
@@ -48,7 +46,7 @@ Link_part_VIIIA<-"https://www.nhsbsa.nhs.uk/sites/default/files/2025-04/Part%20V
 
 #### Follow this same idea to update the rest of the links in the `input/config.yaml`
 
-
 ### Run the main.R:
 After successfully updating the yaml file, run the `main.R` file, which will configure the links and update the database.
+
 
