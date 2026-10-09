@@ -1,4 +1,4 @@
-<h2>Overview</h2>
+## Overview
 This project extracts and links data using the NHS API where available. Where API access is not available, direct links to the relevant data sources are used. The project establishes a database and an analytical pipeline to populate and maintain it.
 The project links data from various sources using NHS SNOMED codes, supporting further research and analysis. It may also serve as a useful resource for those interested in learning about automated reproducible analytical pipelines (RAP) and SQL.
 All data used are publicly available on the NHS website, so no manual data downloads are required.
@@ -19,13 +19,13 @@ All data used are publicly available on the NHS website, so no manual data downl
 
 
 
-<h>Important Note</h2> 
+## Important Note
 Because of the size, I have put the database in .gitignore. You will find it in the parent folder when you clone the repository.
 
 Because I have already created the database, rerunning the same set of code will reproduce a duplicate of the data, and you will get an error due to constraints on duplication. 
 If you intend to rerun the code, ensure you delete the `database.sql` after cloning or you update the `config.yaml` to get a new set of data.
 
-<h>Database Setup</h2> 
+## Database Setup 
 This project uses SQL scripts to create a SQLite database schema (see `schema.sql` in the repository). 
 
 ## Clone the repository:
@@ -59,4 +59,19 @@ Link_part_VIIIA<-"https://www.nhsbsa.nhs.uk/sites/default/files/2025-04/Part%20V
 ### Run the main.R:
 After successfully updating the yaml file, run the `main.R` file, which will configure the links and update the database.
 
+
+
+## Query the database 
+Example on how to query the database.
+
+
+```r
+#Get the list of tables in the database
+dbListTables(conn)
+
+#Run a simple select statement
+dbGetQuery(conn, "SELECT * FROM AMP LIMIT 10")
+```
+
+- Ensure you have always connected to the database before running a query, `conn <- DBI::dbConnect(RSQLite::SQLite(), "../database.sqlite")`
 
