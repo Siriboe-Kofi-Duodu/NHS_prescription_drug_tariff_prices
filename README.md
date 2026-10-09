@@ -1,9 +1,11 @@
-<h2> Overview</h2>
+<h2>Overview</h2>
 This project extracts and links data using the NHS API where available. Where API access is not available, direct links to the relevant data sources are used. The project establishes a database and an analytical pipeline to populate and maintain it.
 The project links data from various sources using NHS SNOMED codes, supporting further research and analysis. It may also serve as a useful resource for those interested in learning about automated reproducible analytical pipelines (RAP) and SQL.
 All data used are publicly available on the NHS website, so no manual data downloads are required.
 
-<h></h2> The project extracts and links these data:
+<h>The project extracts and links these data</h2> 
+
+
 [Prescription Data (PCA)](https://www.nhsbsa.nhs.uk/prescription-data/dispensing-data/prescription-cost-analysis-pca-data)
 
 
@@ -23,7 +25,7 @@ Because of the size, I have put the database in .gitignore. You will find it in 
 Because I have already created the database, rerunning the same set of code will reproduce a duplicate of the data, and you will get an error due to constraints on duplication. 
 If you intend to rerun the code, ensure you delete the `database.sql` after cloning or you update the `config.yaml` to get a new set of data.
 
-<h></h2> Database Setup
+<h>Database Setup</h2> 
 This project uses SQL scripts to create a SQLite database schema (see `schema.sql` in the repository). 
 
 ## Clone the repository:
@@ -34,7 +36,7 @@ Clone the project to your local machine using the url.
 
 ## How to run and update the database
 
-All data sources was directly from the NHS website. The `input/config.yaml` file hosts all data sources links, you would need to make the changes only in the `input/config.yaml` file. 
+All data sources are sourced directly from the NHS website. The `input/config.yaml` file contains all data sources links.To update a data source, you only need to modify the relevant variables and URL in the `input/config.yaml` file. 
 Below are the guide on how to update the variable names and the link. 
 
 ### 1. Year_Month
@@ -52,7 +54,7 @@ Do download the Excel version as I only read the Excel version. If you prefer to
 Link_part_VIIIA<-"https://www.nhsbsa.nhs.uk/sites/default/files/2025-04/Part%20VIIIA%20May%2025.xls.xlsx"
 ```
 
-#### Follow this same idea to update the rest of the links in the `input/config.yaml`
+- Follow this same idea to update the rest of the links in the `input/config.yaml`
 
 ### Run the main.R:
 After successfully updating the yaml file, run the `main.R` file, which will configure the links and update the database.
