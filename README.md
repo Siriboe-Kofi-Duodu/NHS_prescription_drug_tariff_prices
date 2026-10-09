@@ -56,12 +56,12 @@ Link_part_VIIIA<-"https://www.nhsbsa.nhs.uk/sites/default/files/2025-04/Part%20V
 
 - Follow this same idea to update the rest of the links in the `input/config.yaml`
 
-### Run the main.R:
+## Run the main.R:
 After successfully updating the yaml file, run the `main.R` file, which will configure the links and update the database.
 
 
 
-### Query the database 
+#### Query the database 
 Example on how to query the database.
 
 
