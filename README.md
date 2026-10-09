@@ -1,7 +1,7 @@
 ## Overview
 This project develops a reproducible analytical pipeline and relational SQL database integrating NHS prescription cost analysis, drug tariff pricing, concessionary pricing, reimbursement, and prescribing datasets into a unified analytical platform.
 It uses R, SQL, APIs, and web scraping tools to automate data collection, validation, transformation, and integration from multiple sources. BNF and SNOMED coding frameworks are used to link datasets, enabling efficient querying and analysis across complex healthcare data.
-The project reduces manual data preparation, improves data consistency, and produces a consolidated analytical dataset to support research into prescription pricing, reimbursement, utilisation, and trends across thousands of records.
+The project reduces manual data preparation, improves data consistency, and produces analytical dataset to support research into prescription data, utilisation, and trends across thousands of records.
 The project covers the end-to-end development process, including data sourcing, database design, pipeline automation, validation, documentation, and deployment. It also serves as a practical resource for those interested in reproducible analytical pipelines (RAP), SQL, and healthcare data analytics.
 All data used are publicly available from NHS sources.
 
