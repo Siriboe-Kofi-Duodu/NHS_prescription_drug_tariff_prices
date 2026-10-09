@@ -45,7 +45,7 @@ Updating `yyyymm<-202504` will change the year month used to call the PCA data v
 
 - `specials_yyyymm<-202502`; This is the Year_Month for only special products (Part VIIIB and Part VIIID).Special medicines are published only quarterly on the NHS website, that is why I provided a separate Year_Month for the two.
 
-### 2.Part_VIIIA data source 
+### 2. Part_VIIIA data source 
 To update the database with a new Part_VIIIA data, only change the  link in the `config.yaml`. You will get an excel link to the various months on the [NHS website](https://www.nhsbsa.nhs.uk/pharmacies-gp-practices-and-appliance-contractors/drug-tariff/drug-tariff-part-viii)
 Do download the Excel version as I only read the Excel version. If you prefer to use the CSV format, update this line of code  `temp_file <- tempfile(fileext = ".xlsx")` in the `scripts/Tariffs_data_sources.R line 18`
 
