@@ -28,7 +28,7 @@ If you intend to rerun the code, ensure you delete the `database.sql` after clon
 ## Database Setup 
 This project uses SQL scripts to create a SQLite database schema (see `schema.sql` in the repository). 
 
-## Clone the repository:
+### Clone the repository:
 Clone the project to your local machine using the url.
    ```bash
    git clone https://github.com/Siriboe-Kofi-Duodu/NHS_prescription_drug_tariff_prices
@@ -61,7 +61,7 @@ After successfully updating the yaml file, run the `main.R` file, which will con
 
 
 
-## Query the database 
+### Query the database 
 Example on how to query the database.
 
 
