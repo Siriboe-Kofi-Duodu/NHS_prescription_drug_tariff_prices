@@ -1,21 +1,29 @@
-## Overview
+<h2> Overview</h2>
 This project extracts and links data using the NHS API where available. Where API access is not available, direct links to the relevant data sources are used. The project establishes a database and an analytical pipeline to populate and maintain it.
 The project links data from various sources using NHS SNOMED codes, supporting further research and analysis. It may also serve as a useful resource for those interested in learning about automated reproducible analytical pipelines (RAP) and SQL.
 All data used are publicly available on the NHS website, so no manual data downloads are required.
 
-## The project extracts and links these data:
+<h></h2> The project extracts and links these data:
 [Prescription Data (PCA)](https://www.nhsbsa.nhs.uk/prescription-data/dispensing-data/prescription-cost-analysis-pca-data)
+
+
 [Drug Tariff](https://www.nhsbsa.nhs.uk/pharmacies-gp-practices-and-appliance-contractors/drug-tariff/drug-tariff-part-viii)
+
+
 [Concessionary Prices](https://cpe.org.uk/funding-and-reimbursement/reimbursement/price-concessions/archive/)
+
+
 [Snomed Codes](https://dmd-browser.nhsbsa.nhs.uk/)
 
-## Important Note
+
+
+<h>Important Note</h2> 
 Because of the size, I have put the database in .gitignore. You will find it in the parent folder when you clone the repository.
 
 Because I have already created the database, rerunning the same set of code will reproduce a duplicate of the data, and you will get an error due to constraints on duplication. 
 If you intend to rerun the code, ensure you delete the `database.sql` after cloning or you update the `config.yaml` to get a new set of data.
 
-## Database Setup
+<h></h2> Database Setup
 This project uses SQL scripts to create a SQLite database schema (see `schema.sql` in the repository). 
 
 ## Clone the repository:
