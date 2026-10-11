@@ -23,10 +23,8 @@ All data used are publicly available from NHS sources.
 
 
 ## Important Note
-Because of the size, I have put the database in .gitignore. You will find it in the parent folder when you clone the repository.
+Because of the size, I have put the database in .gitignore. You will find it in the parent folder when you clone the repository and run the `main.R`.
 
-Because I have already created the database, rerunning the same set of code will reproduce a duplicate of the data, and you will get an error due to constraints on duplication. 
-If you intend to rerun the code, ensure you delete the `database.sql` after cloning or you update the `config.yaml` to get a new set of data.
 
 ## Database Setup 
 This project uses SQL scripts to create a SQLite database schema (see `schema.sql` in the repository). 
