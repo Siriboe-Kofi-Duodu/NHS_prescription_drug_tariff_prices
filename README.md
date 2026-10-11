@@ -23,7 +23,7 @@ All data used are publicly available from NHS sources.
 
 
 ## Important Note
-Because of the size, I have put the database in .gitignore. You will find it in the parent folder when you clone the repository and run the `main.R`.
+Because of the size, I have put the database in .gitignore. You will find it in the parent folder when you clone the repository and run `Main.R`.
 
 
 ## Database Setup 
