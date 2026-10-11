@@ -21,6 +21,9 @@ logging::addHandler(
   level = "INFO"
 )
 
+#Creating outputs folder logging records
+if (!dir.exists("outputs")) dir.create("outputs")
+
 
 #Referencing data pipeline script
 source("scripts/create_database.R")
